@@ -26,6 +26,11 @@ jobs:
   dockerize:
     needs: build
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      attestations: write
+      id-token: write
     steps:
     - uses: actions/checkout@v4
     - uses: actions/cache@v2
@@ -41,7 +46,7 @@ jobs:
         password: ${{ secrets.GITHUB_TOKEN }}
     - uses: docker/build-push-action@v3
       with:
-        context: ./
+        context: .
         file: ./src/main/docker/Dockerfile
         platforms: linux/amd64,linux/arm64
         push: true
