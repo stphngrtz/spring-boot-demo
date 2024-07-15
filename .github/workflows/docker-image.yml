@@ -1,10 +1,11 @@
 name: Docker Image CI
 
 on:
-  push:
+  workflow_run:
+    workflows: [ "Java CI with Maven" ]
     branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+    types: 
+      - completed
 
 jobs:
 
