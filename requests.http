@@ -1,0 +1,30 @@
+GET http://localhost:8080/actuator/health
+
+###
+
+GET http://localhost:8080/
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+{
+    "this": "is",
+    "just": "an",
+    "example": 123
+}
+
+###
+
+POST http://localhost:8080
+Content-Type: text/plain
+
+Lorem impsum 123
+
+###
+
+POST http://localhost:8080
+Content-Type: application/json
+
+["1", "zwei", "D R E I"]
